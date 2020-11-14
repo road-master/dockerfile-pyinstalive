@@ -1,0 +1,13 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pyInstaLive = {git = "https://github.com/dvingerh/PyInstaLive.git", editable = true, ref = "3.2.0"}
+
+[dev-packages]
+
+[requires]
+
+[scripts]
