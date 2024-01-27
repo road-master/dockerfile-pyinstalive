@@ -1,17 +1,10 @@
-FROM mstmelody/python-ffmpeg:20201114221500
+FROM mstmelody/python-ffmpeg:20240127133000
 RUN apt-get update \
-    && apt-get -y install git \
+    && apt-get -y install --no-install-recommends git=1:2.25.1-1ubuntu3.11 \
     && rm -rf /var/lib/apt/lists/*
-
 COPY ./Pipfile /workspace/
-
-RUN pip --no-cache-dir install pipenv \
+RUN pip3 --no-cache-dir install pipenv==2023.11.17 \
  && pipenv install --skip-lock --deploy --system \
- && pip uninstall -y pipenv virtualenv-clone virtualenv \
+ && pip3 uninstall -y pipenv virtualenv-clone virtualenv \
  && rm -rf /workspace/*
-# Pipenv has bug that not install pakcage from Git repository into system.
-# pip has bug that not install pakcage from Git repository in Dockerfile.
-RUN git clone --branch 3.2.0 https://github.com/dvingerh/PyInstaLive.git /tmp/PyInstaLive \
- && cd /tmp/PyInstaLive \
- && python3 setup.py install
 ENTRYPOINT [ "pyinstalive", "-d" ]

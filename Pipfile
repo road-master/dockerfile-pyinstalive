@@ -4,8 +4,12 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pyInstaLive = {git = "https://github.com/dvingerh/PyInstaLive.git", editable = true, ref = "3.2.0"}
-
+# Pyinstalive ver 4.0.2 raise following error when run pyinstalive command:
+# Could not login: 'NoneType' object has no attribute 'get'
+# - Fixed an issue with csrf token not being extracted correctly by anasomar1 · Pull Request #164 · dvingerh/PyInstaLive
+#   https://github.com/dvingerh/PyInstaLive/pull/164
+# pyInstaLive = {git = "https://github.com/dvingerh/PyInstaLive.git", ref = "4.0.2"}
+pyInstaLive = {git = "https://github.com/anasomar1/PyInstaLive.git", ref = "dev/csrf-token-none-issue"}
 [dev-packages]
 
 [requires]
