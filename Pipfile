@@ -10,6 +10,23 @@ name = "pypi"
 #   https://github.com/dvingerh/PyInstaLive/pull/164
 # pyInstaLive = {git = "https://github.com/dvingerh/PyInstaLive.git", ref = "4.0.2"}
 pyInstaLive = {git = "https://github.com/anasomar1/PyInstaLive.git", ref = "dev/csrf-token-none-issue"}
+# Traceback (most recent call last):
+#   File "/usr/local/bin/pyinstalive", line 5, in <module>
+#     from pyinstalive.__main__ import run
+#   File "/usr/local/lib/python3.11/site-packages/pyinstalive/__main__.py", line 1, in <module>
+#     from .startup import run
+#   File "/usr/local/lib/python3.11/site-packages/pyinstalive/startup.py", line 8, in <module>
+#     from . import logger
+#   File "/usr/local/lib/python3.11/site-packages/pyinstalive/logger.py", line 5, in <module>
+#     from . import helpers
+#   File "/usr/local/lib/python3.11/site-packages/pyinstalive/helpers.py", line 8, in <module>
+#     import requests
+# ModuleNotFoundError: No module named 'requests'
+# - PyInstaLive/pyinstalive/helpers.py at f7b17cb9fc44b01388d7a81459bf251f1b6ddd33 · dvingerh/PyInstaLive
+#   https://github.com/dvingerh/PyInstaLive/blob/f7b17cb9fc44b01388d7a81459bf251f1b6ddd33/pyinstalive/helpers.py#L8
+# - https://github.com/dvingerh/PyInstaLive/issues/162
+#   ModuleNotFoundError: No module named 'requests' · Issue #162 · dvingerh/PyInstaLive
+requests = "*"
 [dev-packages]
 
 [requires]
