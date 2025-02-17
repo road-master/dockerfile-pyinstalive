@@ -9,7 +9,8 @@ name = "pypi"
 # - Fixed an issue with csrf token not being extracted correctly by anasomar1 · Pull Request #164 · dvingerh/PyInstaLive
 #   https://github.com/dvingerh/PyInstaLive/pull/164
 # pyInstaLive = {git = "https://github.com/dvingerh/PyInstaLive.git", ref = "4.0.2"}
-pyInstaLive = {git = "https://github.com/anasomar1/PyInstaLive.git", ref = "dev/csrf-token-none-issue"}
+# pyInstaLive = {git = "https://github.com/anasomar1/PyInstaLive.git", ref = "master"}
+pyInstaLive = {git = "https://github.com/samuelchristlie/PyInstaLive.git", ref = "master"}
 # Traceback (most recent call last):
 #   File "/usr/local/bin/pyinstalive", line 5, in <module>
 #     from pyinstalive.__main__ import run
