@@ -1,0 +1,7 @@
+services:
+  pyinstalive:
+    build: .
+    entrypoint: bash
+    image: mstmelody/pyinstalive:development
+    volumes:
+      - ./:/workspace/
